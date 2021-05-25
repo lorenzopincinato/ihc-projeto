@@ -1,8 +1,53 @@
 <!DOCTYPE html>
 <html>
-<body>
+<head>
+    <link rel="stylesheet" type="text/css" href="./Styles/index.css" />
+    <script src="./Scripts/index.js"></script>
+    <style type="text/css">
+      A:link {text-decoration:none}
+      A:visited {text-decoration:none}
+      A:active {text-decoration:none}
+      A:hover {text-decoration:none}
+      a img {
+      border-width:0;
+      }
+      </style>
+</head>
+<body bgcolor="54595F">
 
-<h1>Projeto IHC</h1>
+  
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark titulo navbar_mudado" >
+      <div >
+        <a class="navbar-brand" href="#">
+        <img src="/Imagens/Icon.svg" alt="" width="40" height="40" class="d-inline-block align-text-top"  style="text-decoration:none;">
+     
+    </a>
+    
+      SafeZone
+     <div class="container">
+      <input type="checkbox" id="checkbox-menu">
+  
+      <label for="checkbox-menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </label>
+    </div> 
+    </div>  
+    
+    </nav>
 
+    <div class="map-wrapper">
+        <div id="map"></div>
+        <div class="time-control-wrapper">
+            <div class="time">
+                <img src = "./Imagens/Clock.svg" />
+                <h1>18:00</h1>
+            </div>
+            <input type="range" min="0" max="1440" value="720" class="time-slider">
+        </div>
+    </div>    
+
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCLAwN6ClJK-07P7WLsHFXeO19FViRi4co&callback=initMap" type="text/javascript"></script>
 </body>
 </html>
