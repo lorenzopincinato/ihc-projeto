@@ -1,53 +1,67 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <link rel="stylesheet" type="text/css" href="./Styles/index.css" />
-    <script src="./Scripts/index.js"></script>
-    <style type="text/css">
-      A:link {text-decoration:none}
-      A:visited {text-decoration:none}
-      A:active {text-decoration:none}
-      A:hover {text-decoration:none}
-      a img {
-      border-width:0;
-      }
-      </style>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+  <link rel="stylesheet" type="text/css" href="./Styles/index.css" />
+  <script src="./Scripts/index.js"></script>
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/4104f3f9e1.js" crossorigin="anonymous"></script>
+  <style type="text/css">
+    A:link {text-decoration:none}
+    A:visited {text-decoration:none}
+    A:active {text-decoration:none}
+    A:hover {text-decoration:none}
+    a img {
+    border-width:0;
+    }
+  </style>
 </head>
-<body bgcolor="54595F">
+<body bgcolor="54595F" onload="setCurrentTime()">
 
+      <span></span>
+      <span></span>
+      <span></span>
+  <nav role="navigation">
+    <div id="menuToggle">
+      
+      <input type="checkbox" />
+      
+      <span></span>
+      <span></span>
+      <span></span>
   
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark titulo navbar_mudado" >
-      <div >
-        <a class="navbar-brand" href="#">
-        <img src="/Imagens/Icon.svg" alt="" width="40" height="40" class="d-inline-block align-text-top"  style="text-decoration:none;">
-     
-    </a>
+      <ul id="menu">
+        <a href="index.html"><li>Home</li></a>
+        <a href="#"><li>Login</li></a>
+        <a href="duvidas.html"><li>Dúvidas</li></a>
+      </ul>
+    </div>
     
-      SafeZone
-     <div class="container">
-      <input type="checkbox" id="checkbox-menu">
-  
-      <label for="checkbox-menu">
-        <span></span>
-        <span></span>
-        <span></span>
-      </label>
-    </div> 
-    </div>  
-    
-    </nav>
+  <h1 class="titulo"> Safezone</h1>
+  </nav>
+  <span></span>
+  <span></span>
+  <span></span>
+
 
     <div class="map-wrapper">
-        <div id="map"></div>
-        <div class="time-control-wrapper">
-            <div class="time">
-                <img src = "./Imagens/Clock.svg" />
-                <h1>18:00</h1>
-            </div>
-            <input type="range" min="0" max="1440" value="720" class="time-slider">
-        </div>
-    </div>    
-
-    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCLAwN6ClJK-07P7WLsHFXeO19FViRi4co&callback=initMap" type="text/javascript"></script>
+      <div id="map"></div>
+      <div class="time-control-wrapper">
+          <div class="time">
+              <span style="font-size: 34px; color: black;">
+                <i class="far fa-clock"></i>
+              </span>
+              <span id="time-selected" class="time-selected"></span>
+          </div>
+          <input id="time-slider" type="range" min="0" max="1440" value="720" class="time-slider" oninput="handleTimeSlider(this.value)"></input>
+      </div>
+      <div class="add-alert-fab">
+        <span style="font-size: 34px; color: #FCBF29;">
+          <i class="fas fa-plus"></i>
+        </span>
+      </div>
+    </div>   
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCLAwN6ClJK-07P7WLsHFXeO19FViRi4co&callback=initMap&maptype=roadmap&style=feature:poi.business%7Cvisibility:off&style=feature:poi.park%7Celement:labels.text%7Cvisibility:off&size=480x360" type="text/javascript"></script>
 </body>
 </html>
