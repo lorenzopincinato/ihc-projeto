@@ -11,7 +11,38 @@ html * {
     width: 100%;
 }
 
-.time-control-wrapper {
+.hidden {
+  display: none !important;
+}
+
+.label-wrapper {
+  display: flex;
+
+  flex-direction: column;
+
+  position: absolute; 
+
+  left: calc(100vw / 2 - 200px);
+  top: 20px;
+
+  z-index: 99;
+
+  padding: 17px;
+
+  align-items: center;
+
+  border-radius: 2px;
+
+  width: 400px;
+
+  background-color: white;
+  box-shadow: rgb(0 0 0 / 30%) 0px 1px 4px -1px;
+
+  color: black;
+  font-weight: bold;
+}
+
+.control-wrapper {
     display: flex;
 
     flex-direction: column;
@@ -33,6 +64,29 @@ html * {
     box-shadow: rgb(0 0 0 / 30%) 0px 1px 4px -1px;
 }
 
+.marker-control-container {
+  display: flex;
+  width: 300px;
+
+  justify-content: space-around;
+}
+
+.marker-control-button {
+  display: flex;
+  flex: 1;
+
+  justify-content: center;
+  align-items: center;
+
+  cursor: pointer;
+}
+
+.vertical-line {
+  width: 1px;
+
+  background-color: #3E3F41;
+}
+
 .time {
   display: flex;
 
@@ -50,6 +104,10 @@ html * {
   font-size: xx-large;
   font-weight: bold;
   margin-left: 8px;
+}
+
+.black {
+  color: black;
 }
 
 .add-alert-fab {

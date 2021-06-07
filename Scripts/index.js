@@ -1,3 +1,7 @@
+let ADDING_MARKER = false;
+
+let NEW_MARKER = null;
+
 const icons = {
     alert: "../Imagens/Alert.svg",
     location: "../Imagens/Location.svg",
@@ -68,6 +72,12 @@ function initMap() {
         icon: icons.location,
         map: map, 
     });
+
+    google.maps.event.addListener(map, 'click', function(event) {
+        if (ADDING_MARKER) {
+            placeMarker(event.latLng);
+        }
+     });
 }
 
 function setCurrentTime() {
@@ -142,4 +152,67 @@ function setActiveAlerts(value) {
             }
         }
     }
+}
+
+function handleAddMarker() {
+    const addMarkerFab = document.getElementById('add-marker-fab');
+    const placeMarkerLabel = document.getElementById('place-marker-label');
+    const timeControl = document.getElementById('time-control');
+
+    timeControl.classList.add('hidden');
+    addMarkerFab.classList.add('hidden');
+    placeMarkerLabel.classList.remove('hidden');
+
+    ADDING_MARKER = true;
+}
+
+function placeMarker(position) {
+    const markerControl = document.getElementById('marker-control');
+    
+    markerControl.classList.remove('hidden');
+
+    if (NEW_MARKER) {
+        NEW_MARKER.setMap(null);
+    }
+
+    NEW_MARKER = new google.maps.Marker({
+        position: position,
+        icon: icons.alert,
+        map: map, 
+    });
+}
+
+function showItemsDescriptionStep() {
+    const itemsDescription = document.getElementById('items-description');
+    itemsDescription.classList.remove('hidden');
+
+    const selectItems = document.getElementById('select-items');
+    selectItems.classList.add('hidden');
+
+    const modalTitle = document.getElementById('modal-title');
+    modalTitle.innerHTML = 'Como eram os pertences roubados?';
+}
+
+function showDescriptionStep() {
+    const description = document.getElementById('description');
+    console.log(description)
+
+    description.classList.remove('hidden');
+
+    const itemsDescription = document.getElementById('items-description');
+    itemsDescription.classList.add('hidden');
+
+    const modalTitle = document.getElementById('modal-title');
+    modalTitle.innerHTML = 'Como o roubo aconteceu?';
+}
+
+function showEditStep() {
+    const edit = document.getElementById('edit');
+    edit.classList.remove('hidden');
+
+    const description = document.getElementById('description');
+    description.classList.add('hidden');
+
+    const modalTitle = document.getElementById('modal-title');
+    modalTitle.innerHTML = 'Está tudo certo?';
 }
