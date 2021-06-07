@@ -182,28 +182,71 @@ function placeMarker(position) {
     });
 }
 
+function showSelectItemsStep() {
+    const selectItems = document.getElementById('select-items');
+    selectItems.classList.remove('hidden');
+
+    const itemsDescription = document.getElementById('items-description');
+    itemsDescription.classList.add('hidden');
+
+    const modalTitle = document.getElementById('modal-title');
+    modalTitle.innerHTML = 'Quais pertences foram roubados?';
+
+    const nextStepButton = document.getElementById('next-step-button');
+    nextStepButton.onclick = showItemsDescriptionStep;
+
+    const peviousStepButton = document.getElementById('previous-step-button');
+    peviousStepButton.classList.add('hidden');
+}
+
 function showItemsDescriptionStep() {
     const itemsDescription = document.getElementById('items-description');
     itemsDescription.classList.remove('hidden');
+
+    const description = document.getElementById('description');
+    description.classList.add('hidden');
 
     const selectItems = document.getElementById('select-items');
     selectItems.classList.add('hidden');
 
     const modalTitle = document.getElementById('modal-title');
     modalTitle.innerHTML = 'Como eram os pertences roubados?';
+
+    const nextStepButton = document.getElementById('next-step-button');
+    nextStepButton.onclick = showDescriptionStep;
+
+    const peviousStepButton = document.getElementById('previous-step-button');
+    peviousStepButton.classList.remove('hidden');
+    peviousStepButton.onclick = showSelectItemsStep;
 }
 
 function showDescriptionStep() {
     const description = document.getElementById('description');
-    console.log(description)
-
     description.classList.remove('hidden');
+
+    const edit = document.getElementById('edit');
+    edit.classList.add('hidden');
 
     const itemsDescription = document.getElementById('items-description');
     itemsDescription.classList.add('hidden');
 
     const modalTitle = document.getElementById('modal-title');
     modalTitle.innerHTML = 'Como o roubo aconteceu?';
+
+    const nextStepButton = document.getElementById('next-step-button');
+    nextStepButton.classList.remove('hidden');
+    nextStepButton.onclick = showEditStep;
+
+    const peviousStepButton = document.getElementById('previous-step-button');
+    peviousStepButton.onclick = showItemsDescriptionStep;
+
+    const saveButton = document.getElementById('save-button');
+    saveButton.classList.add('hidden');
+}
+
+function isChecked(name) {
+    const checkbox = document.getElementById(`item-${name}`);
+    return checkbox.checked;
 }
 
 function showEditStep() {
@@ -215,4 +258,70 @@ function showEditStep() {
 
     const modalTitle = document.getElementById('modal-title');
     modalTitle.innerHTML = 'Está tudo certo?';
+
+    const nextStepButton = document.getElementById('next-step-button');
+    nextStepButton.classList.add('hidden');
+
+    const saveButton = document.getElementById('save-button');
+    saveButton.classList.remove('hidden');
+
+    const items = [
+        {
+            name: 'money',
+            label: 'Dinheiro'
+        },
+        {
+            name: 'wallet',
+            label: 'Carteira'
+        },
+        {
+            name: 'car',
+            label: 'Carro'
+        },
+        {
+            name: 'motorcycle',
+            label: 'Moto'
+        },
+        {
+            name: 'cellphone',
+            label: 'Celular'
+        },
+        {
+            name: 'purse',
+            label: 'Bolsa'
+        },
+        {
+            name: 'jewelry',
+            label: 'Joias'
+        },
+        {
+            name: 'others',
+            label: 'Outros'
+        }
+    ];
+
+    const itemsList = document.getElementById('items-list');
+    itemsList.innerHTML = '';
+
+    items.forEach(item => {
+        if (isChecked(item.name)) {
+            const newItem = document.createElement('li');
+            newItem.innerText = item.label;
+
+            itemsList.appendChild(newItem);
+        }
+    })
+
+    const peviousStepButton = document.getElementById('previous-step-button');
+    peviousStepButton.onclick = showDescriptionStep;
+
+    const itemsDescriptionInput = document.getElementById('items-description-input');
+    const itemsDescriptionText = document.getElementById('items-description-text');
+
+    itemsDescriptionText.innerText = itemsDescriptionInput.value;
+
+    const descriptionInput = document.getElementById('description-input');
+    const descriptionText = document.getElementById('description-text');
+
+    descriptionText.innerText = descriptionInput.value;
 }

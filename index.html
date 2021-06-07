@@ -86,83 +86,90 @@
       <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content">
           <div class="modal-header">
-            <h5 class="modal-title" id="modal-title">Quais itens foram roubados?</h5>
+            <h5 class="modal-title" id="modal-title">Quais pertences foram roubados?</h5>
             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
               <span aria-hidden="true">&times;</span>
             </button>
           </div>
-          <div class="modal-body">
-            <div id="select-items">
-              <div class="form-check">
-                <input class="form-check-input" type="checkbox" value="" id="item-car">
-                <label class="form-check-label" for="item-car">
-                  Carro
-                </label>
-              </div>
-              <div class="form-check">
-                <input class="form-check-input" type="checkbox" value="" id="item-motorcycle">
-                <label class="form-check-label" for="item-motorcycle">
-                  Moto
-                </label>
-              </div>
-              <div class="form-check">
-                <input class="form-check-input" type="checkbox" value="" id="item-money">
-                <label class="form-check-label" for="item-money">
-                  Dinheiro
-                </label>
-              </div>
-              <div class="form-check">
-                <input class="form-check-input" type="checkbox" value="" id="item-cellphone">
-                <label class="form-check-label" for="item-cellphone">
-                  Celular
-                </label>
-              </div>
-              <div class="form-check">
-                <input class="form-check-input" type="checkbox" value="" id="item-wallet">
-                <label class="form-check-label" for="item-wallet">
-                  Carteira
-                </label>
-              </div>
-              <div class="form-check">
-                <input class="form-check-input" type="checkbox" value="" id="item-purse">
-                <label class="form-check-label" for="item-purse">
-                  Bolsa
-                </label>
-              </div>
-              <div class="form-check">
-                <input class="form-check-input" type="checkbox" value="" id="item-jewelry">
-                <label class="form-check-label" for="item-jewelry">
-                  Joias
-                </label>
-              </div>
-              <div class="form-check">
-                <input class="form-check-input" type="checkbox" value="" id="item-others">
-                <label class="form-check-label" for="item-others">
-                  Outros
-                </label>
-              </div>
-              <div class="btn btn-primary" onclick="showItemsDescriptionStep()">Próximo</button>
+          <div id="select-items" class="modal-body">
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" value="" id="item-car">
+              <label class="form-check-label" for="item-car">
+                Carro
+              </label>
             </div>
-          </div> 
-
-          <div id="items-description" class="hidden">
-            <div class="form-group">
-              <textarea class="form-control" rows="6"></textarea>
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" value="" id="item-motorcycle">
+              <label class="form-check-label" for="item-motorcycle">
+                Moto
+              </label>
             </div>
-
-            <div class="btn btn-primary" onclick="showDescriptionStep()">Próximo</div>
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" value="" id="item-money">
+              <label class="form-check-label" for="item-money">
+                Dinheiro
+              </label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" value="" id="item-cellphone">
+              <label class="form-check-label" for="item-cellphone">
+                Celular
+              </label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" value="" id="item-wallet">
+              <label class="form-check-label" for="item-wallet">
+                Carteira
+              </label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" value="" id="item-purse">
+              <label class="form-check-label" for="item-purse">
+                Bolsa
+              </label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" value="" id="item-jewelry">
+              <label class="form-check-label" for="item-jewelry">
+                Joias
+              </label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" value="" id="item-others">
+              <label class="form-check-label" for="item-others">
+                Outros
+              </label>
+            </div>
           </div>
 
-          <div id="description" class="hidden">
+          <div id="items-description" class="hidden modal-body">
             <div class="form-group">
-              <textarea class="form-control" rows="6"></textarea>
+              <textarea id="items-description-input" class="form-control" rows="6"></textarea>
             </div>
-
-            <div class="btn btn-primary" onclick="showEditStep()">Próximo</div>
           </div>
 
-          <div id="edit" class="hidden">
-            <div class="btn btn-primary" onclick="showEditStep()">Salvar</div>
+          <div id="description" class="hidden modal-body">
+            <div class="form-group">
+              <textarea id="description-input" class="form-control" rows="6"></textarea>
+            </div>
+          </div>
+
+          <div id="edit" class="hidden modal-body">
+            <b>Pertences roubados:</b>
+            <ul id="items-list">
+            </ul>
+
+            <b>Como eram os pertences: </b>
+            <p id="items-description-text"></p>
+
+            <b>Como o roubo aconteceu: </b>
+            <p id="description-text"></p>
+          </div>
+
+          <div class="modal-footer">
+            <div id="previous-step-button" class="btn btn-secondary hidden">Anterior</div>
+            <div id="next-step-button" class="btn btn-primary" onclick="showItemsDescriptionStep()">Próximo</div>
+            <div id="save-button" class="btn btn-primary hidden">Salvar</div>
           </div>
         </div>
       </div>
