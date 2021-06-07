@@ -63,11 +63,11 @@
       </div>
       <div id="marker-control" class="control-wrapper hidden">
         <div class="marker-control-container">
-          <button type="button" class="marker-control-button" data-toggle="modal" data-target="#modal">
+          <div type="button" class="marker-control-button" data-toggle="modal" data-target="#modal">
             <span style="font-size: 34px; color: green;">
               <i class="fas fa-check"></i>
             </span>
-          </button>
+          </div>
           <div class="vertical-line"></div>
           <div class="marker-control-button">
             <span style="font-size: 37px; color: red;">
@@ -86,8 +86,8 @@
       <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content">
           <div class="modal-header">
-            <h5 class="modal-title" id="modal-title">Quais pertences foram roubados?</h5>
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <h5 class="modal-title" id="modal-title">O que foi roubado?</h5>
+            <button id="close-modal" type="button" class="close" data-dismiss="modal" aria-label="Close">
               <span aria-hidden="true">&times;</span>
             </button>
           </div>
@@ -166,10 +166,27 @@
             <p id="description-text"></p>
           </div>
 
-          <div class="modal-footer">
+          <div id="edit" class="hidden modal-body">
+            <b>Pertences roubados:</b>
+            <ul id="items-list">
+            </ul>
+
+            <b>Como eram os pertences: </b>
+            <p id="items-description-text"></p>
+
+            <b>Como o roubo aconteceu: </b>
+            <p id="description-text"></p>
+          </div>
+
+          <div id="success" class="hidden modal-body">
+            <h5>Obrigado por contribuir com sua ajuda, assim outras pessoas saberão que esta área possui indices de roubo.</h5>
+          </div>
+
+          <div id="modal-footer" class="modal-footer">
             <div id="previous-step-button" class="btn btn-secondary hidden">Anterior</div>
             <div id="next-step-button" class="btn btn-primary" onclick="showItemsDescriptionStep()">Próximo</div>
-            <div id="save-button" class="btn btn-primary hidden">Salvar</div>
+            <div id="save-button" class="btn btn-primary hidden" onclick="showSuccess()">Salvar</div>
+            <div id="close-button" class="btn btn-primary hidden" onclick="closeModal()">Fechar</div>
           </div>
         </div>
       </div>

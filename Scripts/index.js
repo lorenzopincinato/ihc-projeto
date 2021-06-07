@@ -190,7 +190,7 @@ function showSelectItemsStep() {
     itemsDescription.classList.add('hidden');
 
     const modalTitle = document.getElementById('modal-title');
-    modalTitle.innerHTML = 'Quais pertences foram roubados?';
+    modalTitle.innerHTML = 'O que foi roubado?';
 
     const nextStepButton = document.getElementById('next-step-button');
     nextStepButton.onclick = showItemsDescriptionStep;
@@ -210,7 +210,7 @@ function showItemsDescriptionStep() {
     selectItems.classList.add('hidden');
 
     const modalTitle = document.getElementById('modal-title');
-    modalTitle.innerHTML = 'Como eram os pertences roubados?';
+    modalTitle.innerHTML = 'Como são os pertences roubados?';
 
     const nextStepButton = document.getElementById('next-step-button');
     nextStepButton.onclick = showDescriptionStep;
@@ -257,7 +257,7 @@ function showEditStep() {
     description.classList.add('hidden');
 
     const modalTitle = document.getElementById('modal-title');
-    modalTitle.innerHTML = 'Está tudo certo?';
+    modalTitle.innerHTML = 'As informações estão certas?';
 
     const nextStepButton = document.getElementById('next-step-button');
     nextStepButton.classList.add('hidden');
@@ -324,4 +324,89 @@ function showEditStep() {
     const descriptionText = document.getElementById('description-text');
 
     descriptionText.innerText = descriptionInput.value;
+}
+
+function showSuccess() {
+    const edit = document.getElementById('edit');
+    edit.classList.add('hidden');  
+
+    const success = document.getElementById('success');
+    success.classList.remove('hidden');  
+
+    const modalTitle = document.getElementById('modal-title');
+    modalTitle.innerHTML = 'Sucesso!';
+
+    const previousStepButton = document.getElementById('previous-step-button');
+    previousStepButton.classList.add('hidden');
+
+    const nextStepButton = document.getElementById('next-step-button');
+    nextStepButton.classList.add('hidden');
+
+    const saveButton = document.getElementById('save-button');
+    saveButton.classList.add('hidden');
+
+    const closeButton = document.getElementById('close-button');
+    closeButton.classList.remove('hidden');
+}
+
+function closeModal() {
+    const success = document.getElementById('success');
+    success.classList.add('hidden');  
+
+    const nextStepButton = document.getElementById('next-step-button');
+    nextStepButton.classList.remove('hidden');
+
+    const saveButton = document.getElementById('save-button');
+    saveButton.classList.add('hidden');
+
+    const closeButton = document.getElementById('close-button');
+    closeButton.classList.add('hidden');
+
+    const closeModalButton = document.getElementById("close-modal");
+    closeModalButton.click();
+
+    const startDate = new Date();
+
+    const startHour = startDate.getHours();
+    const startMinutes = startDate.getMinutes();
+
+    const endDate = new Date();
+    endDate.setMinutes(endDate.getMinutes() + 60);
+
+    const endHour = endDate.getHours();
+    const endMinutes = endDate.getMinutes();
+
+    alerts.push({
+        begin: {
+            hour: startHour,
+            minutes: startMinutes,
+        },
+        end: {
+            hour: endHour,
+            minutes: endMinutes,
+        },
+        center: { lat: NEW_MARKER.position.lat(), lng: NEW_MARKER.position.lng() },
+        radius: 150,
+        circle: null,
+        marker: null,
+    })
+
+    setCurrentTime();
+
+    const addMarkerFab = document.getElementById('add-marker-fab');
+    const placeMarkerLabel = document.getElementById('place-marker-label');
+    const timeControl = document.getElementById('time-control');
+    const markerControl = document.getElementById('marker-control');
+
+    timeControl.classList.remove('hidden');
+    addMarkerFab.classList.remove('hidden');
+    placeMarkerLabel.classList.add('hidden');
+    markerControl.classList.add('hidden');
+
+    NEW_MARKER.setMap(null);
+
+    ADDING_MARKER = false;
+    NEW_MARKER = null;
+
+    showSelectItemsStep();
 }
