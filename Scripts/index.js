@@ -3,8 +3,8 @@ let ADDING_MARKER = false;
 let NEW_MARKER = null;
 
 const icons = {
-    alert: "../Imagens/Alert.svg",
-    location: "../Imagens/Location.svg",
+    alert: "/Imagens/Alert.svg",
+    location: "/Imagens/Location.svg",
 };
 
 const alerts = [
@@ -310,7 +310,7 @@ function showEditStep() {
 
             itemsList.appendChild(newItem);
         }
-    })
+    });
 
     const peviousStepButton = document.getElementById('previous-step-button');
     peviousStepButton.onclick = showDescriptionStep;
@@ -402,6 +402,53 @@ function closeModal() {
     addMarkerFab.classList.remove('hidden');
     placeMarkerLabel.classList.add('hidden');
     markerControl.classList.add('hidden');
+
+    const items = [
+        {
+            name: 'money',
+            label: 'Dinheiro'
+        },
+        {
+            name: 'wallet',
+            label: 'Carteira'
+        },
+        {
+            name: 'car',
+            label: 'Carro'
+        },
+        {
+            name: 'motorcycle',
+            label: 'Moto'
+        },
+        {
+            name: 'cellphone',
+            label: 'Celular'
+        },
+        {
+            name: 'purse',
+            label: 'Bolsa'
+        },
+        {
+            name: 'jewelry',
+            label: 'Joias'
+        },
+        {
+            name: 'others',
+            label: 'Outros'
+        }
+    ];
+
+    items.forEach(item => {
+        const checkbox = document.getElementById(`item-${item.name}`);
+        checkbox.checked = false;
+    });
+
+    const itemsDescriptionInput = document.getElementById('items-description-input');
+    itemsDescriptionInput.value = '';
+
+    const descriptionInput = document.getElementById('description-input');
+    descriptionInput.value = '';
+    
 
     NEW_MARKER.setMap(null);
 

@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+  <title>The Watcher</title>
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
   <link rel="stylesheet" type="text/css" href="./Styles/index.css" />
   <script src="./Scripts/index.js"></script>
@@ -22,9 +23,7 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
   
-      <span></span>
-      <span></span>
-      <span></span>
+     
   <nav role="navigation">
     <div id="menuToggle">
       
@@ -33,165 +32,237 @@
       <span></span>
       <span></span>
       <span></span>
-  
+      
       <ul id="menu">
-        <a href="index.html"><li>Home</li></a>
+        <a href="#"><li>Home</li></a>
         <a href="#"><li>Login</li></a>
-        <a href="duvidas.html"><li>Dúvidas</li></a>
+        <li data-toggle="modal" data-target="#ExemploModalCentralizado">Dúvidas</li>
       </ul>
     </div>
-    
-  <h1 class="titulo"> Safezone</h1>
+
+    <h1 class="titulo">The Watcher</h1>
   </nav>
   <span></span>
   <span></span>
   <span></span>
 
-    <div class="map-wrapper">
-      <div id="map"></div>
-      <div id="place-marker-label" class="label-wrapper hidden">
-        Clique no mapa para adicionar uma ocorrência
-      </div>
-      <div id="time-control" class="control-wrapper">
-        <div class="time">
-            <span style="font-size: 34px; color: black;">
-              <i class="far fa-clock"></i>
-            </span>
-            <span id="time-selected" class="time-selected"></span>
-        </div>
-        <input id="time-slider" type="range" min="0" max="1440" value="720" class="time-slider" oninput="handleTimeSlider(this.value)"></input>
-      </div>
-      <div id="marker-control" class="control-wrapper hidden">
-        <div class="marker-control-container">
-          <div type="button" class="marker-control-button" data-toggle="modal" data-target="#modal">
-            <span style="font-size: 34px; color: green;">
-              <i class="fas fa-check"></i>
-            </span>
-          </div>
-          <div class="vertical-line"></div>
-          <div class="marker-control-button">
-            <span style="font-size: 37px; color: red;">
-              <i class="fas fa-times"></i>
-            </span>
-          </div>
-        </div>
-      </div>
-      <div id="add-marker-fab" class="add-alert-fab" onclick="handleAddMarker()">
-        <span style="font-size: 34px; color: #FCBF29;">
-          <i class="fas fa-plus"></i>
-        </span>
-      </div>
+  <!-- MAPA -->
+  <div class="map-wrapper">
+    <div id="map"></div>
+    <div id="place-marker-label" class="label-wrapper hidden">
+      Clique no mapa para adicionar uma ocorrência
     </div>
-    <div class="modal fade black" id="modal" tabindex="-1" role="dialog" aria-labelledby="modal-title" aria-hidden="true">
-      <div class="modal-dialog modal-dialog-centered" role="document">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="modal-title">O que foi roubado?</h5>
-            <button id="close-modal" type="button" class="close" data-dismiss="modal" aria-label="Close">
-              <span aria-hidden="true">&times;</span>
-            </button>
-          </div>
-          <div id="select-items" class="modal-body">
-            <div class="form-check">
-              <input class="form-check-input" type="checkbox" value="" id="item-car">
-              <label class="form-check-label" for="item-car">
-                Carro
-              </label>
-            </div>
-            <div class="form-check">
-              <input class="form-check-input" type="checkbox" value="" id="item-motorcycle">
-              <label class="form-check-label" for="item-motorcycle">
-                Moto
-              </label>
-            </div>
-            <div class="form-check">
-              <input class="form-check-input" type="checkbox" value="" id="item-money">
-              <label class="form-check-label" for="item-money">
-                Dinheiro
-              </label>
-            </div>
-            <div class="form-check">
-              <input class="form-check-input" type="checkbox" value="" id="item-cellphone">
-              <label class="form-check-label" for="item-cellphone">
-                Celular
-              </label>
-            </div>
-            <div class="form-check">
-              <input class="form-check-input" type="checkbox" value="" id="item-wallet">
-              <label class="form-check-label" for="item-wallet">
-                Carteira
-              </label>
-            </div>
-            <div class="form-check">
-              <input class="form-check-input" type="checkbox" value="" id="item-purse">
-              <label class="form-check-label" for="item-purse">
-                Bolsa
-              </label>
-            </div>
-            <div class="form-check">
-              <input class="form-check-input" type="checkbox" value="" id="item-jewelry">
-              <label class="form-check-label" for="item-jewelry">
-                Joias
-              </label>
-            </div>
-            <div class="form-check">
-              <input class="form-check-input" type="checkbox" value="" id="item-others">
-              <label class="form-check-label" for="item-others">
-                Outros
-              </label>
-            </div>
-          </div>
-
-          <div id="items-description" class="hidden modal-body">
-            <div class="form-group">
-              <textarea id="items-description-input" class="form-control" rows="6"></textarea>
-            </div>
-          </div>
-
-          <div id="description" class="hidden modal-body">
-            <div class="form-group">
-              <textarea id="description-input" class="form-control" rows="6"></textarea>
-            </div>
-          </div>
-
-          <div id="edit" class="hidden modal-body">
-            <b>Pertences roubados:</b>
-            <ul id="items-list">
-            </ul>
-
-            <b>Como eram os pertences: </b>
-            <p id="items-description-text"></p>
-
-            <b>Como o roubo aconteceu: </b>
-            <p id="description-text"></p>
-          </div>
-
-          <div id="edit" class="hidden modal-body">
-            <b>Pertences roubados:</b>
-            <ul id="items-list">
-            </ul>
-
-            <b>Como eram os pertences: </b>
-            <p id="items-description-text"></p>
-
-            <b>Como o roubo aconteceu: </b>
-            <p id="description-text"></p>
-          </div>
-
-          <div id="success" class="hidden modal-body">
-            <h5>Obrigado por contribuir com sua ajuda, assim outras pessoas saberão que esta área possui indices de roubo.</h5>
-          </div>
-
-          <div id="modal-footer" class="modal-footer">
-            <div id="previous-step-button" class="btn btn-secondary hidden">Anterior</div>
-            <div id="next-step-button" class="btn btn-primary" onclick="showItemsDescriptionStep()">Próximo</div>
-            <div id="save-button" class="btn btn-primary hidden" onclick="showSuccess()">Salvar</div>
-            <div id="close-button" class="btn btn-primary hidden" onclick="closeModal()">Fechar</div>
-          </div>
+    <div id="time-control" class="control-wrapper">
+      <div class="time">
+          <span style="font-size: 34px; color: black;">
+            <i class="far fa-clock"></i>
+          </span>
+          <span id="time-selected" class="time-selected"></span>
+      </div>
+      <input id="time-slider" type="range" min="0" max="1440" value="720" class="time-slider" oninput="handleTimeSlider(this.value)"></input>
+    </div>
+    <div id="marker-control" class="control-wrapper hidden">
+      <div class="marker-control-container">
+        <div type="button" class="marker-control-button" data-toggle="modal" data-target="#modal">
+          <span style="font-size: 34px; color: green;">
+            <i class="fas fa-check"></i>
+          </span>
+        </div>
+        <div class="vertical-line"></div>
+        <div class="marker-control-button">
+          <span style="font-size: 37px; color: red;">
+            <i class="fas fa-times"></i>
+          </span>
         </div>
       </div>
     </div>
+    <div id="add-marker-fab" class="add-alert-fab" onclick="handleAddMarker()">
+      <span style="font-size: 34px; color: #FCBF29;">
+        <i class="fas fa-plus"></i>
+      </span>
+    </div>
+  </div>
 
-    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCLAwN6ClJK-07P7WLsHFXeO19FViRi4co&callback=initMap&maptype=roadmap&style=feature:poi.business%7Cvisibility:off&style=feature:poi.park%7Celement:labels.text%7Cvisibility:off&size=480x360" type="text/javascript"></script>
-</body>
+  <!-- MODAL CADASTRO DE OCORRÊNCIA -->
+  <div class="modal fade black" id="modal" tabindex="-1" role="dialog" aria-labelledby="modal-title" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="modal-title">O que foi roubado?</h5>
+          <button id="close-modal" type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div id="select-items" class="modal-body">
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="" id="item-car">
+            <label class="form-check-label" for="item-car">
+              Carro
+            </label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="" id="item-motorcycle">
+            <label class="form-check-label" for="item-motorcycle">
+              Moto
+            </label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="" id="item-money">
+            <label class="form-check-label" for="item-money">
+              Dinheiro
+            </label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="" id="item-cellphone">
+            <label class="form-check-label" for="item-cellphone">
+              Celular
+            </label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="" id="item-wallet">
+            <label class="form-check-label" for="item-wallet">
+              Carteira
+            </label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="" id="item-purse">
+            <label class="form-check-label" for="item-purse">
+              Bolsa
+            </label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="" id="item-jewelry">
+            <label class="form-check-label" for="item-jewelry">
+              Joias
+            </label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="" id="item-others">
+            <label class="form-check-label" for="item-others">
+              Outros
+            </label>
+          </div>
+        </div>
+
+        <div id="items-description" class="hidden modal-body">
+          <div class="form-group">
+            <textarea id="items-description-input" class="form-control" rows="6"></textarea>
+          </div>
+        </div>
+
+        <div id="description" class="hidden modal-body">
+          <div class="form-group">
+            <textarea id="description-input" class="form-control" rows="6"></textarea>
+          </div>
+        </div>
+
+        <div id="edit" class="hidden modal-body">
+          <b>Pertences roubados:</b>
+          <ul id="items-list">
+          </ul>
+
+          <b>Como eram os pertences: </b>
+          <p id="items-description-text"></p>
+
+          <b>Como o roubo aconteceu: </b>
+          <p id="description-text"></p>
+        </div>
+
+        <div id="edit" class="hidden modal-body">
+          <b>Pertences roubados:</b>
+          <ul id="items-list">
+          </ul>
+
+          <b>Como eram os pertences: </b>
+          <p id="items-description-text"></p>
+
+          <b>Como o roubo aconteceu: </b>
+          <p id="description-text"></p>
+        </div>
+
+        <div id="success" class="hidden modal-body">
+          <h5>Obrigado por contribuir com sua ajuda, assim outras pessoas saberão que esta área possui indices de roubo.</h5>
+        </div>
+
+        <div id="modal-footer" class="modal-footer">
+          <div id="previous-step-button" class="btn btn-secondary hidden">Anterior</div>
+          <div id="next-step-button" class="btn btn-primary" onclick="showItemsDescriptionStep()">Próximo</div>
+          <div id="save-button" class="btn btn-primary hidden" onclick="showSuccess()">Salvar</div>
+          <div id="close-button" class="btn btn-primary hidden" onclick="closeModal()">Fechar</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCLAwN6ClJK-07P7WLsHFXeO19FViRi4co&callback=initMap&maptype=roadmap&style=feature:poi.business%7Cvisibility:off&style=feature:poi.park%7Celement:labels.text%7Cvisibility:off&size=480x360" type="text/javascript"></script>
+
+  <!-- Modal Dúvidas-->
+  <div class="modal fade black" id="ExemploModalCentralizado" tabindex="-1" role="dialog" aria-labelledby="TituloModalCentralizado" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="TituloModalCentralizado">Dúvidas</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+       <div class="modal-body">
+        <div class="accordion" id="accordionExample">
+          <div class="card">
+            <div class="card-header" id="headingOne">
+              <h5 class="mb-0">
+                <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                 Como Fazer Login
+                </button>
+              </h5>
+            </div>
+        
+            <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
+              <div class="card-body">
+               Para fazer o Login é necessário clicar no menu localizado no canto superior esquerdo e clicar em "Login".<br><br>
+               <img src="Imagens/duvidas1.svg">
+               <img src="Imagens/duvidas2.svg">
+
+              </div>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-header" id="headingTwo">
+              <h5 class="mb-0">
+                <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                  Como marcar um lugar perigoso
+                </button>
+              </h5>
+            </div>
+              <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
+                <div class="card-body">
+                  
+                </div>
+              </div>
+            </div>
+           <div class="card">
+              <div class="card-header" id="headingThree">
+                <h5 class="mb-0">
+                 <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                   Quais as vantagens de ser Premium
+                  </button>
+                </h5>
+              </div>
+             <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
+                <div class="card-body">
+                  Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+                </div>
+             </div>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+         <button type="button" class="btn btn-primary">Enviar Dúvida</button>
+       </div>
+     </div>
+   </div>
+  </div>
+
+  </body>
 </html>
