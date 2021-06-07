@@ -3,8 +3,9 @@ let ADDING_MARKER = false;
 let NEW_MARKER = null;
 
 function getImageUrl(path) {
-    window.location.href.contains('github') ? `/safezone${path}` : path
-}
+    console.log(window.location.href);
+    window.location.href.includes('github') ? `/safezone${path}` : path;
+};
 
 const icons = {
     alert:  getImageUrl("/Imagens/Alert.svg"),
