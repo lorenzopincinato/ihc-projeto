@@ -7,8 +7,13 @@
   <script src="./Scripts/index.js"></script>
   <link rel="preconnect" href="https://fonts.gstatic.com">
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Open+Sans" />
   <script src="https://kit.fontawesome.com/4104f3f9e1.js" crossorigin="anonymous"></script>
+  <meta name="google-signin-client_id" content="YOUR_CLIENT_ID.apps.googleusercontent.com">
+  <meta name="google-signin-client_id" content="417046120284-hcv4d7aul4469efumgbi2kvp8dhvam84.apps.googleusercontent.com.apps.googleusercontent.com">
+  <script src="https://apis.google.com/js/platform.js" async defer></script>
   <style type="text/css">
+  
     A:link {text-decoration:none}
     A:visited {text-decoration:none}
     A:active {text-decoration:none}
@@ -302,12 +307,16 @@
             <label class="form-check-label" for="exampleCheck1">Clique em mim</label>
           </div>
           <button type="submit" class="btn btn-primary">Enviar</button>
-          
+          <br><br><br>
+            </script>
+          <div class="g-signin2" data-onsuccess="onSignIn"></div>
+          </div>
         </form>
+        
       </div>
+      
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
-        <button type="button" class="btn btn-primary">Salvar mudanças</button>
       </div>
     </div>
   </div>
