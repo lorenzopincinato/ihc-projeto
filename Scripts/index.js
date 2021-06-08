@@ -3,7 +3,6 @@ let ADDING_MARKER = false;
 let NEW_MARKER = null;
 
 function getImageUrl(path) {
-    console.log(window.location.href);
     return window.location.href.includes('github') ? `/safezone${path}` : path;
 };
 
