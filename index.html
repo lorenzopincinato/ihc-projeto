@@ -35,8 +35,8 @@
       
       <ul id="menu">
         <a href="#"><li>Home</li></a>
-        <a href="#"><li>Login</li></a>
-        <li data-toggle="modal" data-target="#ExemploModalCentralizado">Dúvidas</li>
+       <li data-toggle="modal" data-target="#Login">Login</li></a>
+        <li data-toggle="modal" data-target="#Duvida">Dúvidas</li>
       </ul>
     </div>
 
@@ -197,7 +197,7 @@
   <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCLAwN6ClJK-07P7WLsHFXeO19FViRi4co&callback=initMap&maptype=roadmap&style=feature:poi.business%7Cvisibility:off&style=feature:poi.park%7Celement:labels.text%7Cvisibility:off&size=480x360" type="text/javascript"></script>
 
   <!-- Modal Dúvidas-->
-  <div class="modal fade black" id="ExemploModalCentralizado" tabindex="-1" role="dialog" aria-labelledby="TituloModalCentralizado" aria-hidden="true">
+  <div class="modal fade black" id="Duvida" tabindex="-1" role="dialog" aria-labelledby="TituloModalCentralizado" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered " role="document" style="max-width: 80%">
       <div class="modal-content">
         <div class="modal-header">
@@ -220,9 +220,9 @@
             <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
               <div class="card-body">
                Para fazer o Login é necessário clicar no menu localizado no canto superior esquerdo e clicar em "Login".<br><br>
-               <img src="/Imagens/duvidas1.png"  width="100%">
+               <img src="Imagens/duvidas1.png"  width="100%">
                <br> <br> <br> <br>
-               <img src="/Imagens/duvidas2.png"  width="100%">
+               <img src="Imagens/duvidas2.png"  width="100%">
 
               </div>
             </div>
@@ -239,9 +239,9 @@
                 <div class="card-body">
                   Para marcar um lugar perigoso é necessário definir a hora em que ocorreu o delito, depois clicar no botão de +,
                   e ir preenchendo as telas que forem aparecendo para saber o que foi roubado e a descrição.<br><br>
-                  <img src="/Imagens/perigoso1.png"  width="100%" >
+                  <img src="Imagens/perigoso1.png"  width="100%" >
                   <br> <br> <br> <br>
-                  <img src="/Imagens/perigoso2.png"   width="100%" >
+                  <img src="Imagens/perigoso2.png"   width="100%" >
                 </div>
               </div>
             </div>
@@ -264,8 +264,8 @@
             </div>
           </div>
         </div>
-
-        <p
+        <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Não encontrou a dúvida que estava procurando? Nos envie um email com ela e te responderemos!</p>
+        <div class=""></div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
          <button type="button" class="btn btn-primary">Enviar Dúvida</button>
@@ -274,5 +274,43 @@
    </div>
   </div>
 
+
+
+<!-- Modal Login -->
+<div class="modal fade black" id="Login" tabindex="-1" role="dialog" aria-labelledby="TituloModalCentralizado" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="TituloModalCentralizado">Título do modal</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form>
+          <div class="form-group">
+            <label for="exampleInputEmail1">Endereço de email</label>
+            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Seu email">
+            <small id="emailHelp" class="form-text text-muted">Nunca vamos compartilhar seu email, com ninguém.</small>
+          </div>
+          <div class="form-group">
+            <label for="exampleInputPassword1">Senha</label>
+            <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Senha">
+          </div>
+          <div class="form-group form-check">
+            <input type="checkbox" class="form-check-input" id="exampleCheck1">
+            <label class="form-check-label" for="exampleCheck1">Clique em mim</label>
+          </div>
+          <button type="submit" class="btn btn-primary">Enviar</button>
+          
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+        <button type="button" class="btn btn-primary">Salvar mudanças</button>
+      </div>
+    </div>
+  </div>
+</div>
   </body>
 </html>
