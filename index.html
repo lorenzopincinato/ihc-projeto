@@ -9,7 +9,6 @@
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Open+Sans" />
   <script src="https://kit.fontawesome.com/4104f3f9e1.js" crossorigin="anonymous"></script>
-  <meta name="google-signin-client_id" content="YOUR_CLIENT_ID.apps.googleusercontent.com">
   <meta name="google-signin-client_id" content="385552232578-14nsn5pd49314nnmn1tv9ns569sm5pcr.apps.googleusercontent.com">
   <script src="https://apis.google.com/js/platform.js" async defer></script>
   <style type="text/css">
@@ -304,21 +303,18 @@
             <label for="exampleInputPassword1">Senha</label>
             <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Senha">
           </div>
-          <div class="form-group form-check">
-            <input type="checkbox" class="form-check-input" id="exampleCheck1">
-            <label class="form-check-label" for="exampleCheck1">Clique em mim</label>
-          </div>
+          
           <button type="submit" class="btn btn-primary">Enviar</button>
           <br><br><br>
             </script>
-          <div class="g-signin2" data-onsuccess="onSignIn"></div>
+          <div class="g-signin2" data-onsuccess="onSignIn" data-onfailure="onSignIn"></div>
+          <script>
+            function onSignIn(response) {
+              alert('Usuário logado com sucesso!');
+            }
+          </script>
           </div>
         </form>
-        
-      </div>
-      
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
       </div>
     </div>
   </div>
