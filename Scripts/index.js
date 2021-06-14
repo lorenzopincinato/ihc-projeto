@@ -3,7 +3,7 @@ let ADDING_MARKER = false;
 let NEW_MARKER = null;
 
 function getImageUrl(path) {
-    return window.location.href.includes('github') ? `/safezone${path}` : path;
+    return window.location.href.includes('github') ? `/thewatcher${path}` : path;
 };
 
 const icons = {
