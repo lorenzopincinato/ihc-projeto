@@ -160,8 +160,10 @@ function setActiveAlerts(value) {
 
 function handleFindLocation() {
     const placeFinder = document.getElementById('place-finder-wrapper');
+    const placeMarkerLabel = document.getElementById('place-marker-label-search');
 
     placeFinder.classList.remove('hidden');
+    placeMarkerLabel.classList.add('hidden');
 }
 
 function handleSearchLocationMarker() {
@@ -169,7 +171,7 @@ function handleSearchLocationMarker() {
     map.setCenter(position);
 
     const addMarkerFab = document.getElementById('add-marker-fab');
-    const placeMarkerLabel = document.getElementById('place-marker-label');
+    const placeMarkerLabel = document.getElementById('place-marker-label-search');
     const timeControl = document.getElementById('time-control');
 
     timeControl.classList.add('hidden');
@@ -333,6 +335,9 @@ function showSuccess() {
 function closeModal() {
     const success = document.getElementById('success');
     success.classList.add('hidden');  
+
+    const placeFinderWrapper = document.getElementById('place-finder-wrapper');
+    placeFinderWrapper.classList.add('hidden');
 
     const saveButton = document.getElementById('save-button');
     saveButton.classList.remove('hidden');

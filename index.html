@@ -10,7 +10,7 @@
   <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Open+Sans" />
   <script src="https://kit.fontawesome.com/4104f3f9e1.js" crossorigin="anonymous"></script>
   <meta name="google-signin-client_id" content="YOUR_CLIENT_ID.apps.googleusercontent.com">
-  <meta name="google-signin-client_id" content="417046120284-hcv4d7aul4469efumgbi2kvp8dhvam84.apps.googleusercontent.com.apps.googleusercontent.com">
+  <meta name="google-signin-client_id" content="385552232578-14nsn5pd49314nnmn1tv9ns569sm5pcr.apps.googleusercontent.com">
   <script src="https://apis.google.com/js/platform.js" async defer></script>
   <style type="text/css">
   
@@ -58,10 +58,15 @@
       Clique no mapa para adicionar uma ocorrência
     </div>
     <div id="place-finder-wrapper" class="label-wrapper hidden">
-      <div class="input-group mb-3">
+      <div class="input-group">
         <input type="text" class="form-control" placeholder="Digite o endereço" aria-describedby="basic-addon2">
         <div class="input-group-append">
-          <button class="btn btn-outline-secondary" type="button" onclick="handleSearchLocationMarker()">Pesquisar</button>
+          <button class="btn btn-outline-secondary" type="button" onclick="handleSearchLocationMarker()">
+            <i class="fas fa-search"></i>
+          </button>
+        </div>
+        <div id="place-marker-label-search" class="hidden" style="display: flex; justify-content: center; width: 100%; margin-top: 17px;">
+          Clique no mapa para adicionar uma ocorrência
         </div>
       </div>      
     </div>
@@ -259,8 +264,8 @@
               </div>
              <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
                 <div class="card-body">
-                  <p>Ao se tornar um membro Premium por apenas R$5,00, você pode criar grupos de pessoas para saber sua localização e saber se estão em zonas seguras ou não.
-                  Também é possível traçar uma rota até uma pessoa escolhida e ir até com o Waze ou Google Maps.
+                  <p>Ao se tornar um membro Premium por apenas R$14,99, você pode criar grupos de pessoas para saber sua localização e saber se estão em zonas seguras ou não.
+                  Também é possível traçar uma rota até uma pessoa escolhida e ir até ela com o Waze ou Google Maps.
                 </p>
                 <p>É possível acessar todas as suas marcações de lugares perigosos. </p>
                 </div>
