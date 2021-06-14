@@ -158,7 +158,16 @@ function setActiveAlerts(value) {
     }
 }
 
+function handleFindLocation() {
+    const placeFinder = document.getElementById('place-finder-wrapper');
+
+    placeFinder.classList.remove('hidden');
+}
+
 function handleSearchLocationMarker() {
+    var position = new google.maps.LatLng(-22.972564, -46.996050);
+    map.setCenter(position);
+
     const addMarkerFab = document.getElementById('add-marker-fab');
     const placeMarkerLabel = document.getElementById('place-marker-label');
     const timeControl = document.getElementById('time-control');
@@ -220,68 +229,6 @@ function placeMarker(position) {
         icon: icons.alert,
         map: map, 
     });
-}
-
-function showSelectItemsStep() {
-    const selectItems = document.getElementById('select-items');
-    selectItems.classList.remove('hidden');
-
-    const itemsDescription = document.getElementById('items-description');
-    itemsDescription.classList.add('hidden');
-
-    const modalTitle = document.getElementById('modal-title');
-    modalTitle.innerHTML = 'O que foi roubado?';
-
-    const nextStepButton = document.getElementById('next-step-button');
-    nextStepButton.onclick = showItemsDescriptionStep;
-
-    const peviousStepButton = document.getElementById('previous-step-button');
-    peviousStepButton.classList.add('hidden');
-}
-
-function showItemsDescriptionStep() {
-    const itemsDescription = document.getElementById('items-description');
-    itemsDescription.classList.remove('hidden');
-
-    const description = document.getElementById('description');
-    description.classList.add('hidden');
-
-    const selectItems = document.getElementById('select-items');
-    selectItems.classList.add('hidden');
-
-    const modalTitle = document.getElementById('modal-title');
-    modalTitle.innerHTML = 'Como são os pertences roubados?';
-
-    const nextStepButton = document.getElementById('next-step-button');
-    nextStepButton.onclick = showDescriptionStep;
-
-    const peviousStepButton = document.getElementById('previous-step-button');
-    peviousStepButton.classList.remove('hidden');
-    peviousStepButton.onclick = showSelectItemsStep;
-}
-
-function showDescriptionStep() {
-    const description = document.getElementById('description');
-    description.classList.remove('hidden');
-
-    const edit = document.getElementById('edit');
-    edit.classList.add('hidden');
-
-    const itemsDescription = document.getElementById('items-description');
-    itemsDescription.classList.add('hidden');
-
-    const modalTitle = document.getElementById('modal-title');
-    modalTitle.innerHTML = 'Como o roubo aconteceu?';
-
-    const nextStepButton = document.getElementById('next-step-button');
-    nextStepButton.classList.remove('hidden');
-    nextStepButton.onclick = showEditStep;
-
-    const peviousStepButton = document.getElementById('previous-step-button');
-    peviousStepButton.onclick = showItemsDescriptionStep;
-
-    const saveButton = document.getElementById('save-button');
-    saveButton.classList.add('hidden');
 }
 
 function isChecked(name) {
@@ -367,20 +314,14 @@ function showEditStep() {
 }
 
 function showSuccess() {
-    const edit = document.getElementById('edit');
-    edit.classList.add('hidden');  
+    const content = document.getElementById('content');
+    content.classList.add('hidden');  
 
     const success = document.getElementById('success');
     success.classList.remove('hidden');  
 
     const modalTitle = document.getElementById('modal-title');
     modalTitle.innerHTML = 'Sucesso!';
-
-    const previousStepButton = document.getElementById('previous-step-button');
-    previousStepButton.classList.add('hidden');
-
-    const nextStepButton = document.getElementById('next-step-button');
-    nextStepButton.classList.add('hidden');
 
     const saveButton = document.getElementById('save-button');
     saveButton.classList.add('hidden');
@@ -393,11 +334,8 @@ function closeModal() {
     const success = document.getElementById('success');
     success.classList.add('hidden');  
 
-    const nextStepButton = document.getElementById('next-step-button');
-    nextStepButton.classList.remove('hidden');
-
     const saveButton = document.getElementById('save-button');
-    saveButton.classList.add('hidden');
+    saveButton.classList.remove('hidden');
 
     const closeButton = document.getElementById('close-button');
     closeButton.classList.add('hidden');
@@ -488,12 +426,17 @@ function closeModal() {
 
     const descriptionInput = document.getElementById('description-input');
     descriptionInput.value = '';
-    
+
+    const modalTitle = document.getElementById('modal-title');
+    modalTitle.innerHTML = 'Nova ocorrência';
 
     NEW_MARKER.setMap(null);
 
     ADDING_MARKER = false;
     NEW_MARKER = null;
 
-    showSelectItemsStep();
+    const selectItems = document.getElementById('content');
+    selectItems.classList.remove('hidden');
+
+    handleCloseFab();
 }

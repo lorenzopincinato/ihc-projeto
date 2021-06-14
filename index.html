@@ -57,6 +57,14 @@
     <div id="place-marker-label" class="label-wrapper hidden">
       Clique no mapa para adicionar uma ocorrência
     </div>
+    <div id="place-finder-wrapper" class="label-wrapper hidden">
+      <div class="input-group mb-3">
+        <input type="text" class="form-control" placeholder="Digite o endereço" aria-describedby="basic-addon2">
+        <div class="input-group-append">
+          <button class="btn btn-outline-secondary" type="button" onclick="handleSearchLocationMarker()">Pesquisar</button>
+        </div>
+      </div>      
+    </div>
     <div id="time-control" class="control-wrapper">
       <div class="time">
           <span style="font-size: 34px; color: black;">
@@ -81,26 +89,26 @@
         </div>
       </div>
     </div>
-    <div title="Procurar" id="add-alert-search-fab" class="fab add-alert-search-fab hidden" onclick="handleSearchLocationMarker()">
-      <span style="font-size: 34px; color: #FCBF29;">
+    <div title="Procurar" id="add-alert-search-fab" class="fab add-alert-search-fab hidden" onclick="handleFindLocation()">
+      <span style="font-size: 34px; color: #FCBF29; width: 100%; height: 100%; display: flex; justify-content: center; align-items: center;">
         <i class="fas fa-search"></i>
       </span>
     </div>
 
     <div title="Usar minha localização" id="add-alert-location-fab" class="fab add-alert-location-fab hidden" onclick="handleAddLocationMarker()">
-      <span style="font-size: 34px; color: #FCBF29;">
+      <span style="font-size: 34px; color: #FCBF29; width: 100%; height: 100%; display: flex; justify-content: center; align-items: center;">
         <i class="fas fa-map-marker-alt"></i>
       </span>
     </div>
 
     <div title="Fechar" id="close-fab" class="fab close-fab hidden" onclick="handleCloseFab()">
-      <span style="font-size: 34px; color: #FCBF29;">
+      <span style="font-size: 34px; color: #FCBF29; width: 100%; height: 100%; display: flex; justify-content: center; align-items: center;">
         <i class="fas fa-times"></i>
       </span>
     </div>
 
     <div title="Adicionar uma ocorrência" id="add-marker-fab" class="fab add-alert-fab" onclick="handleOpenFab()">
-      <span style="font-size: 34px; color: #FCBF29;">
+      <span style="font-size: 34px; color: #FCBF29; width: 100%; height: 100%; display: flex; justify-content: center; align-items: center;">
         <i class="fas fa-plus"></i>
       </span>
     </div>
@@ -111,96 +119,71 @@
     <div class="modal-dialog modal-dialog-centered" role="document">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title" id="modal-title">O que foi roubado?</h5>
+          <h5 class="modal-title" id="modal-title">Nova ocorrência</h5>
           <button id="close-modal" type="button" class="close" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">&times;</span>
           </button>
         </div>
-        <div id="select-items" class="modal-body">
-          <div class="form-check">
-            <input class="form-check-input" type="checkbox" value="" id="item-car">
-            <label class="form-check-label" for="item-car">
-              Carro
-            </label>
+        <div id="content" class="modal-body">
+          <h6>O que foi roubado?</h6>
+          <div class="form-group">
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" value="" id="item-car">
+              <label class="form-check-label" for="item-car">
+                Carro
+              </label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" value="" id="item-motorcycle">
+              <label class="form-check-label" for="item-motorcycle">
+                Moto
+              </label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" value="" id="item-money">
+              <label class="form-check-label" for="item-money">
+                Dinheiro
+              </label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" value="" id="item-cellphone">
+              <label class="form-check-label" for="item-cellphone">
+                Celular
+              </label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" value="" id="item-wallet">
+              <label class="form-check-label" for="item-wallet">
+                Carteira
+              </label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" value="" id="item-purse">
+              <label class="form-check-label" for="item-purse">
+                Bolsa
+              </label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" value="" id="item-jewelry">
+              <label class="form-check-label" for="item-jewelry">
+                Joias
+              </label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" value="" id="item-others">
+              <label class="form-check-label" for="item-others">
+                Outros
+              </label>
+            </div>
           </div>
-          <div class="form-check">
-            <input class="form-check-input" type="checkbox" value="" id="item-motorcycle">
-            <label class="form-check-label" for="item-motorcycle">
-              Moto
-            </label>
-          </div>
-          <div class="form-check">
-            <input class="form-check-input" type="checkbox" value="" id="item-money">
-            <label class="form-check-label" for="item-money">
-              Dinheiro
-            </label>
-          </div>
-          <div class="form-check">
-            <input class="form-check-input" type="checkbox" value="" id="item-cellphone">
-            <label class="form-check-label" for="item-cellphone">
-              Celular
-            </label>
-          </div>
-          <div class="form-check">
-            <input class="form-check-input" type="checkbox" value="" id="item-wallet">
-            <label class="form-check-label" for="item-wallet">
-              Carteira
-            </label>
-          </div>
-          <div class="form-check">
-            <input class="form-check-input" type="checkbox" value="" id="item-purse">
-            <label class="form-check-label" for="item-purse">
-              Bolsa
-            </label>
-          </div>
-          <div class="form-check">
-            <input class="form-check-input" type="checkbox" value="" id="item-jewelry">
-            <label class="form-check-label" for="item-jewelry">
-              Joias
-            </label>
-          </div>
-          <div class="form-check">
-            <input class="form-check-input" type="checkbox" value="" id="item-others">
-            <label class="form-check-label" for="item-others">
-              Outros
-            </label>
-          </div>
-        </div>
-
-        <div id="items-description" class="hidden modal-body">
+          <h6>Como são os pertences roubados?</h6>
           <div class="form-group">
             <textarea id="items-description-input" class="form-control" rows="6"></textarea>
           </div>
-        </div>
-
-        <div id="description" class="hidden modal-body">
+          <h6>Como o roubo aconteceu?</h6>
           <div class="form-group">
             <textarea id="description-input" class="form-control" rows="6"></textarea>
           </div>
-        </div>
-
-        <div id="edit" class="hidden modal-body">
-          <b>Pertences roubados:</b>
-          <ul id="items-list">
-          </ul>
-
-          <b>Como eram os pertences: </b>
-          <p id="items-description-text"></p>
-
-          <b>Como o roubo aconteceu: </b>
-          <p id="description-text"></p>
-        </div>
-
-        <div id="edit" class="hidden modal-body">
-          <b>Pertences roubados:</b>
-          <ul id="items-list">
-          </ul>
-
-          <b>Como eram os pertences: </b>
-          <p id="items-description-text"></p>
-
-          <b>Como o roubo aconteceu: </b>
-          <p id="description-text"></p>
         </div>
 
         <div id="success" class="hidden modal-body">
@@ -208,16 +191,14 @@
         </div>
 
         <div id="modal-footer" class="modal-footer">
-          <div id="previous-step-button" class="btn btn-secondary hidden">Anterior</div>
-          <div id="next-step-button" class="btn btn-primary" onclick="showItemsDescriptionStep()">Próximo</div>
-          <div id="save-button" class="btn btn-primary hidden" onclick="showSuccess()">Salvar</div>
+          <div id="save-button" class="btn btn-primary" onclick="showSuccess()">Salvar</div>
           <div id="close-button" class="btn btn-primary hidden" onclick="closeModal()">Fechar</div>
         </div>
       </div>
     </div>
   </div>
 
-  <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCLAwN6ClJK-07P7WLsHFXeO19FViRi4co&callback=initMap&maptype=roadmap&style=feature:poi.business%7Cvisibility:off&style=feature:poi.park%7Celement:labels.text%7Cvisibility:off&size=480x360" type="text/javascript"></script>
+  <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCLAwN6ClJK-07P7WLsHFXeO19FViRi4co&callback=initMap&maptype=roadmap&style=feature:poi.business%7Cvisibility:off&style=feature:poi.park%7Celement:labels.text%7Cvisibility:off&size=480x360&libraries=places" type="text/javascript"></script>
 
   <!-- Modal Dúvidas-->
   <div class="modal fade black" id="Duvida" tabindex="-1" role="dialog" aria-labelledby="TituloModalCentralizado" aria-hidden="true">
