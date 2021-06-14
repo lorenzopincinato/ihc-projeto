@@ -158,7 +158,7 @@ function setActiveAlerts(value) {
     }
 }
 
-function handleAddMarker() {
+function handleSearchLocationMarker() {
     const addMarkerFab = document.getElementById('add-marker-fab');
     const placeMarkerLabel = document.getElementById('place-marker-label');
     const timeControl = document.getElementById('time-control');
@@ -168,6 +168,42 @@ function handleAddMarker() {
     placeMarkerLabel.classList.remove('hidden');
 
     ADDING_MARKER = true;
+}
+
+function handleAddLocationMarker() {
+    const addMarkerFab = document.getElementById('add-marker-fab');
+    const placeMarkerLabel = document.getElementById('place-marker-label');
+    const timeControl = document.getElementById('time-control');
+
+    timeControl.classList.add('hidden');
+    addMarkerFab.classList.add('hidden');
+    placeMarkerLabel.classList.remove('hidden');
+
+    ADDING_MARKER = true;
+}
+
+function handleOpenFab() {
+    const addMarkerFab = document.getElementById('add-marker-fab');
+    const closeFab = document.getElementById('close-fab');
+    const addAlertLocationFab = document.getElementById('add-alert-location-fab');
+    const addAlertSearchFab = document.getElementById('add-alert-search-fab');
+
+    addMarkerFab.classList.add('hidden');
+    closeFab.classList.remove('hidden');
+    addAlertLocationFab.classList.remove('hidden');
+    addAlertSearchFab.classList.remove('hidden');
+}
+
+function handleCloseFab() {
+    const addMarkerFab = document.getElementById('add-marker-fab');
+    const closeFab = document.getElementById('close-fab');
+    const addAlertLocationFab = document.getElementById('add-alert-location-fab');
+    const addAlertSearchFab = document.getElementById('add-alert-search-fab');
+
+    addMarkerFab.classList.remove('hidden');
+    closeFab.classList.add('hidden');
+    addAlertLocationFab.classList.add('hidden');
+    addAlertSearchFab.classList.add('hidden');
 }
 
 function placeMarker(position) {
