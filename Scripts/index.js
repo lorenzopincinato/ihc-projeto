@@ -445,3 +445,21 @@ function closeModal() {
 
     handleCloseFab();
 }
+
+function handleLogin() {
+    const loginMenuItem = document.getElementById('login-menu-item');
+    loginMenuItem.classList.add('hidden');
+
+    const logoutMenuItem = document.getElementById('logout-menu-item');
+    logoutMenuItem.classList.remove('hidden');
+
+    $('#Login').modal('hide');
+}
+
+function handleLogout() {
+    const loginMenuItem = document.getElementById('login-menu-item');
+    loginMenuItem.classList.remove('hidden');
+
+    const logoutMenuItem = document.getElementById('logout-menu-item');
+    logoutMenuItem.classList.add('hidden');
+}

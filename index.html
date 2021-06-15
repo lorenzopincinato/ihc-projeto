@@ -13,13 +13,8 @@
   <script src="https://apis.google.com/js/platform.js" async defer></script>
   <style type="text/css">
   
-    A:link {text-decoration:none}
-    A:visited {text-decoration:none}
-    A:active {text-decoration:none}
-    A:hover {text-decoration:none}
-    a img {
-    border-width:0;
-    }
+  
+    
   </style>
 </head>
 <body bgcolor="54595F" onload="setCurrentTime()">
@@ -27,7 +22,6 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
   
-     
   <nav role="navigation">
     <div id="menuToggle">
       
@@ -39,16 +33,14 @@
       
       <ul id="menu">
         <a href="#"><li>Home</li></a>
-       <li data-toggle="modal" data-target="#Login">Login</li></a>
+        <li id="login-menu-item" data-toggle="modal" data-target="#Login">Login</li>
         <li data-toggle="modal" data-target="#Duvida">Dúvidas</li>
+        <li id="logout-menu-item" onclick="handleLogout()" class="hidden">Logout</li>
       </ul>
     </div>
 
     <h1 class="titulo">The Watcher</h1>
   </nav>
-  <span></span>
-  <span></span>
-  <span></span>
 
   <!-- MAPA -->
   <div class="map-wrapper">
@@ -209,7 +201,7 @@
     <div class="modal-dialog modal-dialog-centered " role="document" style="max-width: 80%">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title" id="TituloModalCentralizado">Dúvidas</h5>
+          <h5 class="modal-title" id="TituloModalCentralizado">Como funciona</h5>
           <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
             <span aria-hidden="true">&times;</span>
           </button>
@@ -272,7 +264,7 @@
             </div>
           </div>
         </div>
-        <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Não encontrou a dúvida que estava procurando? Nos envie um email com ela e te responderemos!</p>
+        <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Não encontrou o que procurava? Nos envie um <a href="">email</a> e te enviaremos responderemos em até 3 dias!</p>
         <div class=""></div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
@@ -287,7 +279,7 @@
   <div class="modal-dialog modal-dialog-centered" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="TituloModalCentralizado">Título do modal</h5>
+        <h5 class="modal-title" id="TituloModalCentralizado">Login</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
           <span aria-hidden="true">&times;</span>
         </button>
@@ -297,22 +289,17 @@
           <div class="form-group">
             <label for="exampleInputEmail1">Endereço de email</label>
             <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Seu email">
-            <small id="emailHelp" class="form-text text-muted">Nunca vamos compartilhar seu email, com ninguém.</small>
+
           </div>
           <div class="form-group">
             <label for="exampleInputPassword1">Senha</label>
             <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Senha">
           </div>
           
-          <button type="submit" class="btn btn-primary">Enviar</button>
+          <button type="submit" class="btn btn-primary">Entrar</button>
           <br><br><br>
             </script>
-          <div class="g-signin2" data-onsuccess="onSignIn" data-onfailure="onSignIn"></div>
-          <script>
-            function onSignIn(response) {
-              alert('Usuário logado com sucesso!');
-            }
-          </script>
+          <div class="g-signin2" data-onsuccess="handleLogin" data-onfailure="handleLogin"></div>
           </div>
         </form>
       </div>
