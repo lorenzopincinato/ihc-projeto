@@ -27,6 +27,10 @@
     <h1 style="margin-top: 12px;">The Watcher</h1>
   </div>
 
+  <div style="position: absolute; right: 0; top: 22px; padding-right: 16px;">
+    <h5 id="login-name" class="hidden">Bem vindo, Lorenzo</h5>
+  </div>
+
   <nav role="navigation" style="padding-top: 24px; padding-bottom: 8px;">
     <div id="menuToggle">
       
@@ -37,7 +41,6 @@
       <span></span>
       
       <ul id="menu">
-        <a href="#"><li>Home</li></a>
         <li id="login-menu-item" data-toggle="modal" data-target="#Login">Login</li>
         <li data-toggle="modal" data-target="#Duvida">Como Funciona</li>
         <li id="logout-menu-item" onclick="handleLogout()" class="hidden">Logout</li>
@@ -219,13 +222,14 @@
         <p>Ao se tornar um membro Premium por apenas R$14,99, você pode criar grupos de pessoas para saber sua localização e saber se estão em zonas seguras ou não.
         Também é possível traçar uma rota até uma pessoa escolhida e ir até ela com o Waze ou Google Maps.
           <p>É possível acessar todas as suas marcações de lugares perigosos. </p>
-        <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Não encontrou o que procurava? Nos envie um <a href="">email</a> e te enviaremos responderemos em até 3 dias!</p>
+        <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Não encontrou o que procurava? Nos envie um <a href="">email</a> e te responderemos em até 3 dias!</p>
         <div class=""></div>
         <div class="modal-footer">
           <button type="button" class="btn btn-outline-secondary" data-dismiss="modal">Fechar</button>
        </div>
      </div>
    </div>
+  </div>
   </div>
 
   <!-- Modal Login -->
@@ -250,9 +254,7 @@
             <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Senha">
           </div>
           
-          <button type="submit" class="btn btn-primary">Entrar</button>
-          <br><br><br>
-            </script>
+          <button class="btn btn-primary" onclick="handleLogin()">Entrar</button>
           </div>
         </form>
       </div>

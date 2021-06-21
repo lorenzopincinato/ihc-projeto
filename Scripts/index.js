@@ -453,6 +453,9 @@ function handleLogin() {
     const logoutMenuItem = document.getElementById('logout-menu-item');
     logoutMenuItem.classList.remove('hidden');
 
+    const username = document.getElementById('login-name');
+    username.classList.remove('hidden');
+
     $('#Login').modal('hide');
 }
 
@@ -462,4 +465,7 @@ function handleLogout() {
 
     const logoutMenuItem = document.getElementById('logout-menu-item');
     logoutMenuItem.classList.add('hidden');
+
+    const username = document.getElementById('login-name');
+    username.classList.add('hidden');
 }
