@@ -110,52 +110,76 @@ html * {
   color: black;
 }
 
+.add-alert-fab {
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  position: absolute;
+
+  bottom: 32px;
+  left: 32px;
+}
+
+.fab-label {
+  background-color: #3E3F41;
+  color: white;
+  font-weight: bold;
+  border-radius: 16px;
+  margin-left: 16px;
+  padding-right: 8px;
+  padding-left: 8px;
+}
+
+.close-fab {
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  position: absolute;
+
+  bottom: 32px;
+  left: 32px;
+}
+
 .fab {
   display: flex;
 
   align-items: center;
   justify-content: center;
 
-  background-color: #3E3F41;
+  width: 64px;
+  height: 64px;
+  border-radius: 32px;
 
-  position: absolute;
+  background-color: #3E3F41;
 
   box-shadow: rgb(0 0 0 / 30%) 0px 1px 4px -1px;
 
   cursor: pointer;
 }
 
-.close-fab {
-  width: 64px;
-  height: 64px;
-  border-radius: 32px;
-
-  bottom: 32px;
-  left: 32px;
-}
-
-.add-alert-fab {
-  width: 64px;
-  height: 64px;
-  border-radius: 32px;
-
-  bottom: 32px;
-  left: 32px;
-}
-
 .add-alert-location-fab {
-  width: 64px;
-  height: 64px;
-  border-radius: 32px;
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  position: absolute;
 
   bottom: 108px;
   left: 32px;
 }
 
 .add-alert-search-fab {
-  width: 64px;
-  height: 64px;
-  border-radius: 32px;
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  position: absolute;
 
   bottom: 184px;
   left: 32px;

@@ -85,28 +85,48 @@
         </div>
       </div>
     </div>
-    <div title="Procurar" id="add-alert-search-fab" class="fab add-alert-search-fab hidden" onclick="handleFindLocation()">
-      <span style="font-size: 34px; color: #FCBF29; width: 100%; height: 100%; display: flex; justify-content: center; align-items: center;">
-        <i class="fas fa-search"></i>
-      </span>
+    <div class="add-alert-search-fab hidden" id="add-alert-search-fab">
+      <div title="Procurar" class="fab" onclick="handleFindLocation()">
+        <span style="font-size: 34px; color: #FCBF29; width: 100%; height: 100%; display: flex; justify-content: center; align-items: center;">
+          <i class="fas fa-search"></i>
+        </span>
+      </div>
+      <div class="fab-label">
+        Procurar
+      </div>
     </div>
 
-    <div title="Usar minha localização" id="add-alert-location-fab" class="fab add-alert-location-fab hidden" onclick="handleAddLocationMarker()">
-      <span style="font-size: 34px; color: #FCBF29; width: 100%; height: 100%; display: flex; justify-content: center; align-items: center;">
-        <i class="fas fa-map-marker-alt"></i>
-      </span>
+    <div class="add-alert-location-fab hidden" id="add-alert-location-fab">
+      <div title="Usar minha localização" class="fab" onclick="handleAddLocationMarker()">
+        <span style="font-size: 34px; color: #FCBF29; width: 100%; height: 100%; display: flex; justify-content: center; align-items: center;">
+          <i class="fas fa-map-marker-alt"></i>
+        </span>
+      </div>
+      <div class="fab-label">
+        Usar minha localização
+      </div>
     </div>
 
-    <div title="Fechar" id="close-fab" class="fab close-fab hidden" onclick="handleCloseFab()">
-      <span style="font-size: 34px; color: #FCBF29; width: 100%; height: 100%; display: flex; justify-content: center; align-items: center;">
-        <i class="fas fa-times"></i>
-      </span>
+    <div class="close-fab hidden" id="close-fab">
+      <div title="Fechar" class="fab" onclick="handleCloseFab()">
+        <span style="font-size: 34px; color: #FCBF29; width: 100%; height: 100%; display: flex; justify-content: center; align-items: center;">
+          <i class="fas fa-times"></i>
+        </span>
+      </div>
+      <div class="fab-label">
+        Fechar
+      </div>
     </div>
 
-    <div title="Adicionar uma ocorrência" id="add-marker-fab" class="fab add-alert-fab" onclick="handleOpenFab()">
-      <span style="font-size: 34px; color: #FCBF29; width: 100%; height: 100%; display: flex; justify-content: center; align-items: center;">
-        <i class="fas fa-plus"></i>
-      </span>
+    <div class="add-alert-fab" id="add-marker-fab">
+      <div title="Adicionar uma ocorrência" id="add-marker-fab" class="fab" onclick="handleOpenFab()">
+        <span style="font-size: 34px; color: #FCBF29; width: 100%; height: 100%; display: flex; justify-content: center; align-items: center;">
+          <i class="fas fa-plus"></i>
+        </span>
+      </div>
+      <div class="fab-label">
+        Adicionar uma ocorrência
+      </div>
     </div>
   </div>
 
