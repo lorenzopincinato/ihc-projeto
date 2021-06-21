@@ -22,7 +22,12 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
   
-  <nav role="navigation">
+  <div style="position: absolute; left: 0; right: 0; margin-left: auto; margin-right: auto; display: flex; align-items: center; justify-content: center;">
+    <img src="./Imagens/logo.svg" width="68px"/> 
+    <h1 style="margin-top: 12px;">The Watcher</h1>
+  </div>
+
+  <nav role="navigation" style="padding-top: 24px; padding-bottom: 8px;">
     <div id="menuToggle">
       
       <input type="checkbox" />
@@ -34,12 +39,10 @@
       <ul id="menu">
         <a href="#"><li>Home</li></a>
         <li id="login-menu-item" data-toggle="modal" data-target="#Login">Login</li>
-        <li data-toggle="modal" data-target="#Duvida">Dúvidas</li>
+        <li data-toggle="modal" data-target="#Duvida">Como Funciona</li>
         <li id="logout-menu-item" onclick="handleLogout()" class="hidden">Logout</li>
       </ul>
     </div>
-
-    <h1 class="titulo">The Watcher</h1>
   </nav>
 
   <!-- MAPA -->
@@ -197,68 +200,29 @@
           </button>
         </div>
        <div class="modal-body">
-        <div class="accordion" id="accordionExample">
-          <div class="card">
-            <div class="card-header" id="headingOne">
-              <h5 class="mb-0">
-                <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                 Como Fazer Login
-                </button>
-              </h5>
-            </div>
-        
-            <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
-              <div class="card-body">
-               Para fazer o Login é necessário clicar no menu localizado no canto superior esquerdo e clicar em "Login".<br><br>
-               <img src="Imagens/duvidas1.png"  width="100%">
-               <br> <br> <br> <br>
-               <img src="Imagens/duvidas2.png"  width="100%">
+       <h2>Como Fazer Login</h2> 
 
-              </div>
-            </div>
-          </div>
-          <div class="card">
-            <div class="card-header" id="headingTwo">
-              <h5 class="mb-0">
-                <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                  Como marcar um lugar perigoso
-                </button>
-              </h5>
-            </div>
-              <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
-                <div class="card-body">
-                  Para marcar um lugar perigoso é necessário definir a hora em que ocorreu o delito, depois clicar no botão de +,
-                  e ir preenchendo as telas que forem aparecendo para saber o que foi roubado e a descrição.<br><br>
-                  <img src="Imagens/perigoso1.png"  width="100%" >
-                  <br> <br> <br> <br>
-                  <img src="Imagens/perigoso2.png"   width="100%" >
-                </div>
-              </div>
-            </div>
-           <div class="card">
-              <div class="card-header" id="headingThree">
-                <h5 class="mb-0">
-                 <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                   Quais as vantagens de ser Premium
-                  </button>
-                </h5>
-              </div>
-             <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
-                <div class="card-body">
-                  <p>Ao se tornar um membro Premium por apenas R$14,99, você pode criar grupos de pessoas para saber sua localização e saber se estão em zonas seguras ou não.
-                  Também é possível traçar uma rota até uma pessoa escolhida e ir até ela com o Waze ou Google Maps.
-                </p>
-                <p>É possível acessar todas as suas marcações de lugares perigosos. </p>
-                </div>
-             </div>
-            </div>
-          </div>
-        </div>
+        Para fazer o Login é necessário clicar no menu localizado no canto superior esquerdo e clicar em "Login".<br><br>
+        <img src="Imagens/duvidas1.png"  width="100%">
+        <br> <br> <br> <br>
+        <img src="Imagens/duvidas2.png"  width="100%">
+        <br><br>
+        <h2>Como marcar um lugar perigoso</h2>
+        Para marcar um lugar perigoso é necessário definir a hora em que ocorreu o delito, depois clicar no botão de +,
+        e ir preenchendo as telas que forem aparecendo para saber o que foi roubado e a descrição.<br><br>
+        <img src="Imagens/perigoso1.png"  width="100%" >
+        <br> <br> <br> <br>
+        <img src="Imagens/perigoso2.png"   width="100%" >
+        <br><br>
+       <h2>Quais as vantagens de ser Premium</h2> 
+        
+        <p>Ao se tornar um membro Premium por apenas R$14,99, você pode criar grupos de pessoas para saber sua localização e saber se estão em zonas seguras ou não.
+        Também é possível traçar uma rota até uma pessoa escolhida e ir até ela com o Waze ou Google Maps.
+          <p>É possível acessar todas as suas marcações de lugares perigosos. </p>
         <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Não encontrou o que procurava? Nos envie um <a href="">email</a> e te enviaremos responderemos em até 3 dias!</p>
         <div class=""></div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
-         <button type="button" class="btn btn-primary">Enviar Dúvida</button>
+          <button type="button" class="btn btn-outline-secondary" data-dismiss="modal">Fechar</button>
        </div>
      </div>
    </div>
@@ -289,7 +253,6 @@
           <button type="submit" class="btn btn-primary">Entrar</button>
           <br><br><br>
             </script>
-          <div class="g-signin2" data-onsuccess="handleLogin" data-onfailure="handleLogin"></div>
           </div>
         </form>
       </div>
