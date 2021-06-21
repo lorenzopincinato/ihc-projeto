@@ -456,6 +456,9 @@ function handleLogin() {
     const username = document.getElementById('login-name');
     username.classList.remove('hidden');
 
+    const addMarkerFab = document.getElementById('add-marker-fab');
+    addMarkerFab.classList.remove('hidden');
+
     $('#Login').modal('hide');
 }
 
@@ -468,4 +471,7 @@ function handleLogout() {
 
     const username = document.getElementById('login-name');
     username.classList.add('hidden');
+
+    const addMarkerFab = document.getElementById('add-marker-fab');
+    addMarkerFab.classList.add('hidden');
 }
